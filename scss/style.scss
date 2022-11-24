@@ -1,0 +1,232 @@
+@import "nullstyle.scss";
+
+
+.none {
+    display: none;
+}
+.througn {
+    text-decoration: line-through;
+    font-weight: 500;
+    color: #596830;
+}
+.wraper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    color: #171b0c;
+}
+body.noscrol {
+    overflow: hidden;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.contener {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+
+.header {
+    &__contener {
+        padding: 20px 30px;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 42px;
+        font-weight: 700;
+        font-style: italic;
+        color: #24c215;
+    }
+}
+
+.main {
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.items {
+    &__item {
+        padding: 10px 20px;
+        background-color: rgb(198, 197, 219);
+        margin: 5px 10px;
+        border-radius: 10px;
+        border: 2px solid #0b1a5e;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+        color: #187e0f;
+        
+    }
+
+    &__tasck {
+        margin-right: 20px;
+        min-width: 156px;
+        overflow: hidden;
+        overflow: auto;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 80px;
+    }
+
+    &__date {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    &__btn {
+    }
+
+    &__done {
+        position: relative;
+    }
+
+    &__done1 {
+        position: absolute;
+        width: 4px;
+        height: 23px;
+        top: 0px;
+        right: 5px;
+        background-color: rgb(9, 240, 9);
+        transform: rotate(25deg);
+        pointer-events: none;
+    }
+
+    &__done2 {
+        position: absolute;
+        width: 4px;
+        height: 17px;
+        top: 5px;
+        right: 13px;
+        background-color: rgb(9, 240, 9);
+        transform: rotate(-25deg);
+        pointer-events: none;
+    }
+
+    &__del {
+        position: relative;
+    }
+
+    &__del1 {
+        position: absolute;
+        width: 4px;
+        height: 25px;
+        top: -1px;
+        right: 9px;
+        background-color: rgb(241, 9, 125);
+        transform: rotate(45deg);
+        pointer-events: none;
+    }
+
+    &__del2 {
+        position: absolute;
+        width: 4px;
+        height: 25px;
+        top: -1px;
+        right: 9px;
+        background-color: rgb(241, 9, 125);
+        transform: rotate(-45deg);
+        pointer-events: none;
+    }
+}
+.btn {
+    border: 1px solid #0b1a5e;
+    border-radius: 2px;
+    padding: 3px;
+    margin: 5px;
+    min-width: 25px;
+    min-height: 25px;
+    transition: all 0.3s ease 0s;
+}
+.btn:hover {
+    background-color: rgb(71, 80, 201);
+}
+.items {
+    &__item {
+        &_task {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.addtask {
+    &__body {
+        padding: 10px 20px;
+        background-color: rgb(146, 144, 187);
+        margin: 5px 10px;
+        border-radius: 10px;
+        border: 2px solid #0b1a5e;
+    }
+
+    &__title {
+        color: #187e0f;
+        margin-bottom: 15px;
+    }
+
+    &__form {
+    }
+}
+.form {
+    &__group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__control {
+        padding: 10px;
+        background-color: rgb(226, 236, 231);
+        margin: 5px 0;
+        border-radius: 5px;
+        border: 1px solid #0b1a5e;
+    }
+    &__control:focus{
+        border: 2px solid #0b1a5e;
+    }
+    
+    &__text {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    &__button {
+        padding: 5px 30px;
+        background-color: rgb(226, 236, 231);
+        margin: 5px 0;
+        border-radius: 10px;
+        border: 1px solid #0b1a5e;
+        color: #24c215;
+        font-size: 24px;
+        font-style: italic;
+        transition: all 0.3s ease 0s;
+    }
+    &__button:hover {
+        background-color: rgb(71, 80, 201);
+    }
+    &__button:active {
+        color: #0d4708;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <title>ToDo</title>
+</head>
+<body>
+    <div class="wraper">
+        <header class="header">
+            <div class="header__contener contener">
+                <h1 class="header__title">Список задач</h1>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__contener contener">
+                <ul class="main__items items">
+                    <li class="items__item" id="empty">
+                        <h2 class="items__text">Список задач пуст.</h2>
+                    </li>
+                    <!-- <li class="items__item items__item_task">
+                        <span class="items__tasck">купить хлеб</span>
+                        <div class="items__info">
+                            <div class="items__date">
+                                11:20
+                            </div>
+                            <div class="items__btn">
+                                <button class="items__done btn">
+                                    <span class="items__done1"></span>
+                                    <span class="items__done2"></span>
+                                </button>
+                                <button class="items__del btn" data-action="delete">
+                                    <span class="items__del1"></span>
+                                    <span class="items__del2"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+                <div class="addtask__body">
+                    <div class="addtask__title">Добавить новую задчу</div>
+                    <div class="addtask__form">
+                        <form class="form">
+                            <div class="form__group">
+                                <input type="text" class="form__control"  placeholder="Текст задачи" value="">
+                                <small class="form__text">Что нужно сделать и какой результат получить</small>
+                            </div>
+                            <button type="submit" class="form__button">Добавить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+  <script src="js/main.js"></script>  
+</body>
+</html>

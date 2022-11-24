@@ -1,0 +1,354 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+.none {
+  display: none;
+}
+
+.througn {
+  text-decoration: line-through;
+  font-weight: 500;
+  color: #596830;
+}
+
+.wraper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: #171b0c;
+}
+
+body.noscrol {
+  overflow: hidden;
+}
+
+main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.contener {
+  max-width: 990px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
+.header__contener {
+  padding: 20px 30px;
+}
+
+.header__title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  font-style: italic;
+  color: #24c215;
+}
+
+.main__items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.items__item {
+  padding: 10px 20px;
+  background-color: #c6c5db;
+  margin: 5px 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  border: 2px solid #0b1a5e;
+}
+
+.items__text {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  color: #187e0f;
+}
+
+.items__tasck {
+  margin-right: 20px;
+  min-width: 156px;
+  overflow: hidden;
+  overflow: auto;
+}
+
+.items__info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 80px;
+}
+
+.items__date {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.items__done {
+  position: relative;
+}
+
+.items__done1 {
+  position: absolute;
+  width: 4px;
+  height: 23px;
+  top: 0px;
+  right: 5px;
+  background-color: #09f009;
+  -webkit-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+          transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.items__done2 {
+  position: absolute;
+  width: 4px;
+  height: 17px;
+  top: 5px;
+  right: 13px;
+  background-color: #09f009;
+  -webkit-transform: rotate(-25deg);
+      -ms-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.items__del {
+  position: relative;
+}
+
+.items__del1 {
+  position: absolute;
+  width: 4px;
+  height: 25px;
+  top: -1px;
+  right: 9px;
+  background-color: #f1097d;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.items__del2 {
+  position: absolute;
+  width: 4px;
+  height: 25px;
+  top: -1px;
+  right: 9px;
+  background-color: #f1097d;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  pointer-events: none;
+}
+
+.btn {
+  border: 1px solid #0b1a5e;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  padding: 3px;
+  margin: 5px;
+  min-width: 25px;
+  min-height: 25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+  background-color: #4750c9;
+}
+
+.items__item_task {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.addtask__body {
+  padding: 10px 20px;
+  background-color: #9290bb;
+  margin: 5px 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  border: 2px solid #0b1a5e;
+}
+
+.addtask__title {
+  color: #187e0f;
+  margin-bottom: 15px;
+}
+
+.form__group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__control {
+  padding: 10px;
+  background-color: #e2ece7;
+  margin: 5px 0;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  border: 1px solid #0b1a5e;
+}
+
+.form__control:focus {
+  border: 2px solid #0b1a5e;
+}
+
+.form__text {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.form__button {
+  padding: 5px 30px;
+  background-color: #e2ece7;
+  margin: 5px 0;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  border: 1px solid #0b1a5e;
+  color: #24c215;
+  font-size: 24px;
+  font-style: italic;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.form__button:hover {
+  background-color: #4750c9;
+}
+
+.form__button:active {
+  color: #0d4708;
+}
