@@ -1,25 +1,98 @@
 const addBtn = document.querySelector('.form__button')
 const input = document.querySelector('.form__control')
 const list = document.querySelector('.main__items')
-const emptylist = document.querySelector('#empty')
 
 addBtn.addEventListener('click', addTask)
 list.addEventListener('click', delitTask)
 list.addEventListener('click', doneTask)
 
+let tasks = []
+
+if(localStorage.getItem('tasks')) {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+}
+
+tasks.forEach((task) => renderTask(task));
+checkEmptylist ()
 input.focus()
 
 function addTask(event) {
     event.preventDefault()
     let valueForm = input.value;
     if (valueForm.length < 1) return;
-    let date = new Date
+    const date = new Date
+    const dateTask = date.getDate() + "." + date.getMonth() + "." + date.getFullYear()
 
-    const newTask = `<li class="items__item items__item_task">
-    <span class="items__tasck">${valueForm}</span>
+
+    const newTask = {
+        text: valueForm,
+        id: Date.now(),
+        time: dateTask,
+        done: false,
+    }
+
+    tasks.push(newTask)
+    saveToLocalStorage()
+    
+    renderTask(newTask)
+    
+    input.value = ""
+    input.focus()
+
+    checkEmptylist ()
+}
+
+function delitTask(event) {
+    if (event.target.dataset.action !== 'delete') return;
+
+    const parentNode = event.target.closest('.items__item_task')
+
+    const index = tasks.findIndex((task) => task.id == parentNode.id)
+    tasks.splice(index, 1)
+    saveToLocalStorage()
+    parentNode.remove()
+
+    checkEmptylist ()
+}
+
+function doneTask(event) {
+    if (event.target.dataset.action === 'done') {
+        const parentNode = event.target.closest('.items__item_task')
+        const textTask = parentNode.querySelector('.items__tasck')
+        textTask.classList.toggle('througn')
+
+        const task = tasks.find((task) => task.id == parentNode.id)
+        task.done = !task.done
+        saveToLocalStorage()
+    }
+}
+
+function checkEmptylist () {
+    if(tasks.length == 0 ) {
+        const emptylistHTML = `<li class="items__item" id="empty">
+                               <h2 class="items__text">Список задач пуст.</h2>
+                         </li>`
+
+        list.insertAdjacentHTML('afterbegin', emptylistHTML)
+    }
+    if(tasks.length > 0) {
+        const emptylistEl = document.querySelector('#empty')
+        emptylistEl ? emptylistEl.remove() : null;
+    }
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+function renderTask(task) {
+    const classCSS = task.done ? "items__tasck througn" : "items__tasck";
+
+    const taskHTML = `<li id = "${task.id}"class="items__item items__item_task">
+    <span class="${classCSS}">${task.text}</span>
     <div class="items__info">
         <div class="items__date">
-           ${date.getDate()}.${date.getMonth()}. ${date.getFullYear()}
+           ${task.time}
         </div>
         <div class="items__btn">
             <button class="items__done btn" data-action="done">
@@ -34,30 +107,5 @@ function addTask(event) {
     </div>
 </li>`
 
-    list.insertAdjacentHTML('beforeend', newTask)
-    input.value = ""
-    input.focus()
-
-    if (list.children.length > 1) {
-        emptylist.classList.add('none')
-    }
-}
-
-function delitTask(event) {
-    if (event.target.dataset.action !== 'delete') return;
-
-    event.target.closest('.items__item_task').remove()
-
-    if (list.children.length == 1) {
-        emptylist.classList.remove('none')
-        input.focus()
-    }
-}
-
-function doneTask(event) {
-    if (event.target.dataset.action === 'done') {
-        const parentNode = event.target.closest('.items__item_task')
-        const textTask = parentNode.querySelector('.items__tasck')
-        textTask.classList.toggle('througn')
-    }
+    list.insertAdjacentHTML('beforeend', taskHTML)
 }
