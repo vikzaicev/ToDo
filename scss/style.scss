@@ -25,13 +25,17 @@ body {
     font-weight: 600;
     font-style: italic;
     color: #171b0c;
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
 }
 body.noscrol {
     overflow: hidden;
+    
 }
 
 main {
     flex: 1 1 auto;
+    
 }
 
 .contener {
