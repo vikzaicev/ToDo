@@ -21,7 +21,7 @@ function addTask(event) {
     let valueForm = input.value;
     if (valueForm.length < 1) return;
     const date = new Date
-    const dateTask = date.getDate() + "." + date.getMonth() + "." + date.getFullYear()
+    const dateTask = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear()
 
 
     const newTask = {
