@@ -1,6 +1,5 @@
 @import "nullstyle.scss";
 
-
 .none {
     display: none;
 }
@@ -30,12 +29,12 @@ body {
 }
 body.noscrol {
     overflow: hidden;
-    
 }
 
 main {
+    height: 100vh;
     flex: 1 1 auto;
-    
+    overflow: auto;
 }
 
 .contener {
@@ -71,6 +70,10 @@ main {
         margin: 5px 10px;
         border-radius: 10px;
         border: 2px solid #0b1a5e;
+        @media (max-width: 420px) {
+            margin: 5px 0px;
+            padding: 10px 10px;
+        }
     }
 
     &__text {
@@ -78,7 +81,6 @@ main {
         font-size: 36px;
         font-weight: 600;
         color: #187e0f;
-        
     }
 
     &__tasck {
@@ -165,7 +167,9 @@ main {
     transition: all 0.3s ease 0s;
 }
 .btn:hover {
-    background-color: rgb(71, 80, 201);
+    @media (min-width: 769px) {
+        background-color: rgb(71, 80, 201);
+    }
 }
 .items {
     &__item {
@@ -183,6 +187,10 @@ main {
         margin: 5px 10px;
         border-radius: 10px;
         border: 2px solid #0b1a5e;
+        @media (max-width: 420px) {
+            margin: 5px 0px;
+            padding: 5px 10px;
+        }
     }
 
     &__title {
@@ -206,10 +214,10 @@ main {
         border-radius: 5px;
         border: 1px solid #0b1a5e;
     }
-    &__control:focus{
+    &__control:focus {
         border: 2px solid #0b1a5e;
     }
-    
+
     &__text {
         margin-bottom: 10px;
         font-size: 18px;
@@ -218,7 +226,7 @@ main {
 
     &__button {
         padding: 5px 30px;
-        background-color: rgb(226, 236, 231);
+        background-color: rgb(47, 115, 160);
         margin: 5px 0;
         border-radius: 10px;
         border: 1px solid #0b1a5e;
@@ -226,9 +234,12 @@ main {
         font-size: 24px;
         font-style: italic;
         transition: all 0.3s ease 0s;
+        
     }
     &__button:hover {
-        background-color: rgb(71, 80, 201);
+        @media (min-width: 769px) {
+            background-color: rgb(71, 80, 201);
+        }
     }
     &__button:active {
         color: #0d4708;

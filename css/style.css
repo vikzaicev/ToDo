@@ -119,10 +119,12 @@ body.noscrol {
 }
 
 main {
+  height: 100vh;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  overflow: auto;
 }
 
 .contener {
@@ -162,6 +164,13 @@ main {
   -webkit-border-radius: 10px;
           border-radius: 10px;
   border: 2px solid #0b1a5e;
+}
+
+@media (max-width: 420px) {
+  .items__item {
+    margin: 5px 0px;
+    padding: 10px 10px;
+  }
 }
 
 .items__text {
@@ -273,8 +282,10 @@ main {
   transition: all 0.3s ease 0s;
 }
 
-.btn:hover {
-  background-color: #4750c9;
+@media (min-width: 769px) {
+  .btn:hover {
+    background-color: #4750c9;
+  }
 }
 
 .items__item_task {
@@ -295,6 +306,13 @@ main {
   -webkit-border-radius: 10px;
           border-radius: 10px;
   border: 2px solid #0b1a5e;
+}
+
+@media (max-width: 420px) {
+  .addtask__body {
+    margin: 5px 0px;
+    padding: 5px 10px;
+  }
 }
 
 .addtask__title {
@@ -335,7 +353,7 @@ main {
 
 .form__button {
   padding: 5px 30px;
-  background-color: #e2ece7;
+  background-color: #2f73a0;
   margin: 5px 0;
   -webkit-border-radius: 10px;
           border-radius: 10px;
@@ -348,8 +366,10 @@ main {
   transition: all 0.3s ease 0s;
 }
 
-.form__button:hover {
-  background-color: #4750c9;
+@media (min-width: 769px) {
+  .form__button:hover {
+    background-color: #4750c9;
+  }
 }
 
 .form__button:active {

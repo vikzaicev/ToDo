@@ -8,12 +8,12 @@ list.addEventListener('click', doneTask)
 
 let tasks = []
 
-if(localStorage.getItem('tasks')) {
+if (localStorage.getItem('tasks')) {
     tasks = JSON.parse(localStorage.getItem('tasks'))
 }
 
 tasks.forEach((task) => renderTask(task));
-checkEmptylist ()
+checkEmptylist()
 input.focus()
 
 function addTask(event) {
@@ -33,13 +33,12 @@ function addTask(event) {
 
     tasks.push(newTask)
     saveToLocalStorage()
-    
+
     renderTask(newTask)
-    
+
     input.value = ""
     input.focus()
-
-    checkEmptylist ()
+    checkEmptylist()
 }
 
 function delitTask(event) {
@@ -52,7 +51,7 @@ function delitTask(event) {
     saveToLocalStorage()
     parentNode.remove()
 
-    checkEmptylist ()
+    checkEmptylist()
 }
 
 function doneTask(event) {
@@ -67,15 +66,15 @@ function doneTask(event) {
     }
 }
 
-function checkEmptylist () {
-    if(tasks.length == 0 ) {
+function checkEmptylist() {
+    if (tasks.length == 0) {
         const emptylistHTML = `<li class="items__item" id="empty">
                                <h2 class="items__text">Список задач пуст.</h2>
                          </li>`
 
         list.insertAdjacentHTML('afterbegin', emptylistHTML)
     }
-    if(tasks.length > 0) {
+    if (tasks.length > 0) {
         const emptylistEl = document.querySelector('#empty')
         emptylistEl ? emptylistEl.remove() : null;
     }
