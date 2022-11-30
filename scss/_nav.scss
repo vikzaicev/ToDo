@@ -1,0 +1,22 @@
+.nav {
+
+    &__list {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__item {
+        margin-left: 30px;
+
+    }
+
+    &__link {
+        color: #092407;
+        transition: all 0.3s ease 0;
+    }
+    &__link:hover {
+        color: #095204;
+    }
+}

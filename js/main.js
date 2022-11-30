@@ -7,10 +7,16 @@ list.addEventListener('click', delitTask)
 list.addEventListener('click', doneTask)
 
 let tasks = []
+let deleteTasks = []
+if (localStorage.getItem('deleteTasks')) {
+    deleteTasks = JSON.parse(localStorage.getItem('deleteTasks'))
+}
 
 if (localStorage.getItem('tasks')) {
     tasks = JSON.parse(localStorage.getItem('tasks'))
 }
+
+
 
 tasks.forEach((task) => renderTask(task));
 checkEmptylist()
@@ -28,11 +34,13 @@ function addTask(event) {
         text: valueForm,
         id: Date.now(),
         time: dateTask,
+        timeEnd: 0,
         done: false,
     }
 
     tasks.push(newTask)
     saveToLocalStorage()
+    
 
     renderTask(newTask)
 
@@ -47,12 +55,21 @@ function delitTask(event) {
     const parentNode = event.target.closest('.items__item_task')
 
     const index = tasks.findIndex((task) => task.id == parentNode.id)
+
+    const date = new Date
+    tasks[index].timeEnd = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear()
+    console.log(tasks[index].timeEnd);
+    deleteTasks.push(tasks[index])
+    localStorage.setItem('deleteTasks', JSON.stringify(deleteTasks))
+    console.log(deleteTasks);
+
     tasks.splice(index, 1)
     saveToLocalStorage()
     parentNode.remove()
 
     checkEmptylist()
 }
+console.log(deleteTasks);
 
 function doneTask(event) {
     if (event.target.dataset.action === 'done') {
