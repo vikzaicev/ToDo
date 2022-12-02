@@ -24,8 +24,8 @@ deleteTasks.forEach((task) => renderDelTask(task));
 function renderDelTask(task) {
 
 
-    const taskHTML = `<li "class="items__item items__item_task">
-    <span class=""items__tasck"">${task.text}</span>
+    const taskHTML = `<li class="items__item items__item_task">
+    <span class="items__tasck">${task.text}</span>
     <div class="items__info">
         <div class="items__date">
            ${task.time} - ${task.timeEnd}

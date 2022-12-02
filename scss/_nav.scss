@@ -1,15 +1,21 @@
 .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 
     &__list {
         padding: 10px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        @media (max-width: 500px) {
+            display: none;
+        }
     }
 
     &__item {
         margin-left: 30px;
-
     }
 
     &__link {
@@ -19,4 +25,92 @@
     &__link:hover {
         color: #095204;
     }
+}
+
+.burger {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    
+    @media (min-width: 500px) {
+        display: none;
+    }
+
+    &__sp1,
+    &__sp2,
+    &__sp3 {
+        position: absolute;
+        background-color: #fff;
+        width: 30px;
+        height: 3px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    &__sp1 {
+        top: 0;
+    }
+
+    &__sp2 {
+        top: 45%;
+    }
+
+    &__sp3 {
+        bottom: 0;
+    }
+}
+
+.burger.open {
+    //background-color: #095204;
+}
+.burger.open span.burger__sp2 {
+    opacity: 0;
+}
+.burger.open span.burger__sp1 {
+    transform: rotate(45deg);
+    top: 10px;
+}
+.burger.open span.burger__sp3 {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+.popup {
+    position: absolute;
+    display: block;
+    top: 60px;
+    left: 0;
+    transform: translate( -600px);
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.9;
+    z-index: 5;
+    transition: all 0.4s ease 0s;
+    @media (min-width: 500px) {
+        display: none;
+    }
+
+    &__list {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__link {
+        color: #092407;
+        font-size: 32px;
+        font-weight: bold;
+    }
+}
+
+.popup.open {
+    transform: translate(0px);
+    left: 0;
+    transition: all 0.4s ease 0s;
 }
