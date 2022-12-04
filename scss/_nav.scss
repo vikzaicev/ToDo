@@ -1,8 +1,11 @@
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 10px;
+    @media (max-width: 500px) {
+        justify-content:space-between;
+    }
 
     &__list {
         padding: 10px;
@@ -113,4 +116,12 @@
     transform: translate(0px);
     left: 0;
     transition: all 0.4s ease 0s;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    @media (min-width: 500px) {
+        display: none;
+    }
 }
