@@ -28,6 +28,39 @@ body {
     background: url(../img/bg.jpg) no-repeat;
     background-size: cover;
 }
+
+body.about {
+    background: url(../img/office-gabc392811_640.jpg)no-repeat;
+    background-size: cover;
+}
+
+.contakt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(198, 197, 219);
+    margin: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid #0b1a5e;
+    @media (max-width: 420px) {
+        margin: 5px 0px;
+        padding: 10px 10px;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        font-style: italic;
+        color: #24c215;
+        margin-bottom: 20px;
+    }
+
+    &__mail {
+    }
+}
+
 body.noscrol {
     overflow: hidden;
 }
@@ -70,8 +103,6 @@ main {
     }
 }
 
-
-
 .items {
     &__item {
         padding: 10px 20px;
@@ -84,8 +115,6 @@ main {
             padding: 10px 10px;
         }
     }
-
-    
 
     &__text {
         text-align: center;
@@ -245,7 +274,6 @@ main {
         font-size: 24px;
         font-style: italic;
         transition: all 0.3s ease 0s;
-        
     }
     &__button:hover {
         @media (min-width: 769px) {
