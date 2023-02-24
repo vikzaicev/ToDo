@@ -301,7 +301,7 @@ main {
 }
 
 .header__contener {
-  padding: 20px 30px;
+  padding: clamp(1.25rem, 0.341rem + 4.55vw, 3.75rem);
 }
 
 .header__title {

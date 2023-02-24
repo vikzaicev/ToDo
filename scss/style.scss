@@ -51,7 +51,7 @@ main {
 
 .header {
     &__contener {
-        padding: 20px 30px;
+        padding: unquote('clamp(1.25rem, 0.341rem + 4.55vw, 3.75rem)') ;
     }
 
     &__title {
